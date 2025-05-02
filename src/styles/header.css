@@ -1,0 +1,16 @@
+header{
+    display: flex;
+    width: 98%;
+    margin:20px auto;
+    text-align: center;
+}
+.description, .score{
+    width: 50%;
+    text-align: center;
+}
+.description h1{
+    font-size: 48px;
+}
+.description h4{
+    font-size: 20px;
+}
