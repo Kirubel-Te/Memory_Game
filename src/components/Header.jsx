@@ -1,6 +1,6 @@
 import '../styles/header.css'
 
-export default function Header(){
+export default function Header(props){
     return(
         <>
             <header>
@@ -10,8 +10,8 @@ export default function Header(){
                 </div>
                 <div className='score'>
                     <h3>Score Board</h3>
-                    <p>score: 0</p>
-                    <p>Best sore: 0</p>
+                    <p>score: {props.score}</p>
+                    <p>Best sore: {props.bscore}</p>
                 </div>
             </header>
         </>

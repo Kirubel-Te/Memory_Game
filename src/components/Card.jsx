@@ -4,7 +4,7 @@ export default function Card(props){
 
     return(
         <>
-            <div className="card">
+            <div className="card" onClick={props.click}>
                 <div className='img'>
                     <img src={props.image}/>
                 </div>
