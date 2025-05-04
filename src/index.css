@@ -5,12 +5,22 @@
 }
 
 body{
-  height: 100vh;
+  min-height: 100vh;
   font-family: "Bree Serif", serif;
   font-weight: 400;
   font-style: normal;
   background-image: linear-gradient(to bottom, #000000, #004d00);
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   color: #78af41;
+}
+
+.img-sec{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin:70px 10px;
 }

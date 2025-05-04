@@ -1,7 +1,7 @@
 header{
     display: flex;
     width: 98%;
-    margin:20px auto;
+    margin:40px auto;
     text-align: center;
 }
 .description, .score{

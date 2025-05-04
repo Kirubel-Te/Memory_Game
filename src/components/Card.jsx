@@ -1,15 +1,15 @@
 import '../styles/Card.css'
 
-export default function Card(){
+export default function Card(props){
 
     return(
         <>
             <div className="card">
                 <div className='img'>
-                    <img src="https://i.imgflip.com/1bij.jpg"/>
+                    <img src={props.image}/>
                 </div>
                 <div className='Name'>
-                    <h1>first image</h1>
+                    <h1>{props.imgName}</h1>
                 </div>
             </div>
         
