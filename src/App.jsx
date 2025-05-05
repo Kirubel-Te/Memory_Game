@@ -1,6 +1,10 @@
 import Header from './components/header'
 import './index.css'
 
+import Confetti from 'react-confetti';
+import { useWindowSize } from 'react-use';
+
+
 import Card from './components/Card'
 import { useEffect, useState } from 'react'
 
@@ -48,9 +52,17 @@ export default function App(){
   },[])
   
   const imgLink = Images.map(img => <Card image={img.url} key={img.id} imgName={img.name} id={img.id} click={()=>CardClick(img.id)}/>)
+  const { width, height } = useWindowSize();
 
   return(
     <>
+      {gameWon && <Confetti
+        width={width}
+        height={height}
+        numberOfPieces={500}
+        gravity={0.3}
+        recycle={false}
+      />}
       <Header score={Score.length} bscore={BScore}/>
       <section className='img-sec'>
         {!gameWon ? imgLink : 
