@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react'
 export default function App(){
 
   const[Images,SetAllImg] = useState([])
+  const[gameWon, setGameWon] = useState(false)
 
   const [Score,SetScore] = useState([])
   const [BScore,setBScore] = useState(0)
@@ -20,11 +21,26 @@ export default function App(){
       if (isDuplicate && BScore < prev.length) {
         setBScore(prev.length);
       }
+      
   
       return newScore;
-    });
+    })
     SetAllImg(prev => prev.sort(() => 0.5 - Math.random()))
   }
+
+  useEffect(() => {
+    if (Score.length === 10) {
+      setGameWon(true);
+    }
+  }, [Score]);
+  
+
+  function handleNew(){
+    setGameWon(false)
+    SetScore([])
+
+  }
+
   useEffect(() => {
     fetch('https://api.imgflip.com/get_memes')
       .then(res => res.json())
@@ -37,7 +53,11 @@ export default function App(){
     <>
       <Header score={Score.length} bscore={BScore}/>
       <section className='img-sec'>
-        {imgLink}
+        {!gameWon ? imgLink : 
+          <div className='Won'>
+            <h1>You Have Won The Game</h1>
+            <button onClick={handleNew}>New Game</button>
+          </div>}
       </section>
     </>
   )

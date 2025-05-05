@@ -24,3 +24,31 @@ body{
   gap: 15px;
   margin:70px 10px;
 }
+
+.Won{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px;
+  background-color: #78af41;
+  width: 30%;
+  margin: 70px auto;
+  color: antiquewhite;
+  border-radius: 6px;
+  box-shadow:0 6px 15px rgba(255, 223, 0, 0.4);
+}
+.Won > button{
+  width: fit-content;
+  background-color: #08c208;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 40px;
+  font-size: large;
+  font-weight: 700;
+}
+.Won > button:hover{
+  cursor: pointer;
+  box-shadow:0 6px 15px rgba(255, 223, 0, 0.4);
+}
